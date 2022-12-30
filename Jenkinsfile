@@ -1,16 +1,18 @@
 #!/usr/bin/env groovy
 pipeline {
   // agent {label 'your-docker-agent-name-here'}
-     agent any
+     agent {
+        label 'snowflake1'
+    }
   environment {
     VIRTUALENV                  = 'snowflake_dev'                           // name of virtual environment
-    PYTHON_VERSION              = 'python3.7'                               // can be python3.8, python3.9
+    PYTHON_VERSION              = 'python3.10'                               // can be python3.8, python3.9
     PIP_VERSION                 = 'pip3.7'                                  // can be pip3.8, pip3.9
     PROJECT_FOLDER              = 'migrations'                              // name of project folder where scripts are located
-    SF_ACCOUNT                  = 'YOUR SNOWFLAKE ACCOUNT NAME HERE'        // typically everything that comes before snowflakecomputing.com
-    SF_USER                     = 'YOUR SNOWFLAKE USER ID HERE'
-    SF_ROLE                     = 'NAME OF ROLE HERE'                       // Typically requires create, update, delete privileges
-    SF_WH                       = 'NAME OF YOUR WAREHOUSE HERE'
+    SF_ACCOUNT                  = 'sana.tabassum@lntinfotech.com'        // typically everything that comes before snowflakecomputing.com
+    SF_USER                     = 'sanataba'
+ //   SF_ROLE                     = 'NAME OF ROLE HERE'                       // Typically requires create, update, delete privileges
+  //  SF_WH                       = 'NAME OF YOUR WAREHOUSE HERE'
     SF_DB                       = 'NAME OF YOUR DATABASE HERE'
     SF_CH                       = 'NAME OF YOUR CHANGE HISTORY TABLE HERE'
     SECRET_LOCATION             = '/home/jenkins/snowflake_pk'              // If you are using a Key Pair Authentication
