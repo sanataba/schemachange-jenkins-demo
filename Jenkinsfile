@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        label 'snowflake1'
+        label 'snowflake2'
     } 
       
        
